@@ -5,6 +5,7 @@ Shader "Hidden/ScreenHex"
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _CellSize("Cell Size", Range(0, 2)) = 1
         _BorderSize("Border Size", Range(0, 0.1)) = 0.05
+        _BorderValue("Border Value", Range(0, 1)) = 0
         _ColorAmount("Color Amount", Range(0, 1)) = 0.1
         _MinMult("Min Multiplier", Range(0, 1)) = 0
         _MaxMult("Max Multiplier", Range(0, 1)) = 1
@@ -22,6 +23,7 @@ Shader "Hidden/ScreenHex"
             uniform sampler2D _MainTex;
             uniform float _CellSize;
             uniform float _BorderSize;
+            uniform float _BorderValue;
             uniform float _ColorAmount;
             uniform float _MinMult;
             uniform float _MaxMult;
@@ -84,7 +86,7 @@ Shader "Hidden/ScreenHex"
                 float vm = (v * (_MaxMult - _MinMult) + _MinMult);
 
                 float isBorder = step(noise.z, _BorderSize);
-                float multiplier = lerp(vm, 0, isBorder);
+                float multiplier = lerp(vm, _BorderValue, isBorder);
 
                 float3 randColor = rand1dTo3d(noise.y) * _ColorAmount;
                 float4 randMult = float4(randColor.r, randColor.g, randColor.b, 0);

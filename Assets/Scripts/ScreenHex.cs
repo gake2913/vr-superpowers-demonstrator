@@ -9,6 +9,7 @@ public class ScreenHex : MonoBehaviour
     public new bool enabled = true;
     [Range(0, 2)] public float CellSize = 2;
     [Range(0, 0.1f)] public float BorderSize = 0.05f;
+    [Range(0, 1)] public float BorderValue = 0;
     [Range(0, 1)] public float ColorAmount = 0.1f;
     [Range(0, 1)] public float MinMultiplier = 0;
     [Range(0, 1)] public float MaxMultiplier = 1;
@@ -36,6 +37,7 @@ public class ScreenHex : MonoBehaviour
 
         material.SetFloat("_CellSize", CellSize);
         material.SetFloat("_BorderSize", BorderSize);
+        material.SetFloat("_BorderValue", BorderValue);
         material.SetFloat("_ColorAmount", ColorAmount);
         material.SetFloat("_MinMult", MinMultiplier);
         material.SetFloat("_MaxMult", MaxMultiplier);
