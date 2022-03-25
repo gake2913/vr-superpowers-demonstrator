@@ -12,7 +12,7 @@ public class Selectable : MonoBehaviour
     private Outline outline;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         outline = gameObject.AddComponent<Outline>();
         outline.OutlineColor = OutlineColor;
@@ -20,13 +20,13 @@ public class Selectable : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         outline.enabled = Highlight;
     }
 
-    public void Select()
+    public virtual void Select()
     {
-        
+        Debug.Log("Selected " + gameObject.name);
     }
 }

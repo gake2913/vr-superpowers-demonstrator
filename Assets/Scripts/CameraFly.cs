@@ -5,10 +5,8 @@ using UnityEngine;
 public class CameraFly : PortalTraveller
 {
 
-    public float Sensitivity = 100;
+    public float Sensitivity = 5;
     public float Speed = 2;
-
-    public AnimSpeedTest AnimSpeedTest;
 
     private float pitch;
 
@@ -58,8 +56,5 @@ public class CameraFly : PortalTraveller
         rot.x += -mouseDelta.y * Sensitivity;
         rot.y += mouseDelta.x * Sensitivity;
         transform.rotation = Quaternion.Euler(rot);
-
-        // Other
-        AnimSpeedTest.AnimationSpeed = dir.magnitude * multiplier;
     }
 }
