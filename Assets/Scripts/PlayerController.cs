@@ -16,7 +16,7 @@ public class PlayerController : PortalTraveller
 
     private Rigidbody rb;
     private Camera cam;
-    private Collider collider;
+    private new Collider collider;
 
     [SerializeField] private bool isGrounded = false;
 

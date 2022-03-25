@@ -24,4 +24,9 @@ public class Selectable : MonoBehaviour
     {
         outline.enabled = Highlight;
     }
+
+    public void Select()
+    {
+        
+    }
 }

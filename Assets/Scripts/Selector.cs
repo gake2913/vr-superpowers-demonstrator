@@ -55,6 +55,11 @@ public class Selector : MonoBehaviour
             {
                 lastHighlight = closest;
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                closest.Select();
+            }
         }
         else
         {
