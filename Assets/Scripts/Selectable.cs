@@ -29,4 +29,14 @@ public class Selectable : MonoBehaviour
     {
         Debug.Log("Selected " + gameObject.name);
     }
+
+    public virtual void HoverEnter()
+    {
+        Debug.Log("Hover Enter " + gameObject.name);
+    }
+
+    public virtual void HoverExit()
+    {
+        Debug.Log("Hover Exit " + gameObject.name);
+    }
 }

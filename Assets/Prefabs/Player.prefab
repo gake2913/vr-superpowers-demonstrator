@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6183bb0c3f38cd4c8b63893a3b4ba17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastHighlight: {fileID: 0}
+  Range: 3
 --- !u!1 &1724440243470097983
 GameObject:
   m_ObjectHideFlags: 0

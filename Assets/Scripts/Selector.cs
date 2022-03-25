@@ -5,7 +5,9 @@ using UnityEngine;
 public class Selector : MonoBehaviour
 {
 
-    [SerializeField ]private Selectable lastHighlight;
+    [Range(0, 10)] public float Range = 5;
+
+    private Selectable lastHighlight;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,7 @@ public class Selector : MonoBehaviour
         Vector3 direction = transform.forward;
         Ray ray = new Ray(origin, direction);
 
-        RaycastHit[] hits = Physics.RaycastAll(ray, 5);
+        RaycastHit[] hits = Physics.RaycastAll(ray, Range);
         List<Selectable> selectables = new List<Selectable>();
         foreach (RaycastHit hit in hits)
         {
@@ -50,10 +52,12 @@ public class Selector : MonoBehaviour
             {
                 lastHighlight.Highlight = false;
                 lastHighlight = closest;
+                closest.HoverEnter();
             }
             else if (lastHighlight == null)
             {
                 lastHighlight = closest;
+                closest.HoverEnter();
             }
 
             if (Input.GetMouseButtonDown(0))
@@ -66,6 +70,7 @@ public class Selector : MonoBehaviour
             if (lastHighlight != null)
             {
                 lastHighlight.Highlight = false;
+                lastHighlight.HoverExit();
                 lastHighlight = null;
             }
         }
