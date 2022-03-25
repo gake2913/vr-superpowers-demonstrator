@@ -118,6 +118,13 @@ public class Fly : Selectable
         flyPlayer.transform.position = centerPos;
         flyPlayer.transform.rotation = transform.rotation;
 
+        Camera flyCam = flyPlayer.GetComponentInChildren<Camera>();
+        Portal[] portals = FindObjectsOfType<Portal>();
+        foreach (Portal portal in portals)
+        {
+            portal.playerCam = flyCam;
+        }
+
         PlayerMode = true;
     }
 
@@ -138,6 +145,12 @@ public class Fly : Selectable
         player.GetComponentInChildren<Selector>().enabled = true;
         player.GetComponentInChildren<Camera>().enabled = true;
         player.GetComponentInChildren<AudioListener>().enabled = true;
+
+        Portal[] portals = FindObjectsOfType<Portal>();
+        foreach (Portal portal in portals)
+        {
+            portal.playerCam = player.GetComponentInChildren<Camera>();
+        }
 
         transform.position = flyPlayer.transform.position;
         centerPos = flyPlayer.transform.position;

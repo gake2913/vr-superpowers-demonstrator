@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2345640422149825139}
   - component: {fileID: 2345640422149825141}
   - component: {fileID: 2345640422149825128}
+  - component: {fileID: 8403292120658404131}
   m_Layer: 0
   m_Name: FlyingPlayer
   m_TagString: Untagged
@@ -62,10 +63,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2320fb0c76cac204d93be7e2c4cf55af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphicsObject: {fileID: 0}
+  graphicsObject: {fileID: 7115064367973605287}
   Sensitivity: 5
   Speed: 5
-  AnimSpeedTest: {fileID: 0}
+--- !u!135 &8403292120658404131
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345640422149825143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0.07, z: 0.03}
 --- !u!1 &2345640422355127046
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +92,8 @@ GameObject:
   - component: {fileID: 2345640422355127045}
   - component: {fileID: 2345640422355127042}
   - component: {fileID: 2345640422355127041}
+  - component: {fileID: 4978376406949609550}
+  - component: {fileID: 7207350408087656231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -176,6 +191,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastHighlight: {fileID: 0}
+--- !u!114 &4978376406949609550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345640422355127046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b40fe306d41824dafb0cc686634a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  CellSize: 0.08
+  BorderSize: 0.0139
+  ColorAmount: 0.1
+  MinMultiplier: 0.5
+  MaxMultiplier: 1
+--- !u!114 &7207350408087656231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345640422355127046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140b506c8c5244c4ea232d01f4ccaf5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  RedCut: 0.1
 --- !u!1 &7115064366287844827
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +622,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7115064367577082377}
-  - component: {fileID: 7115064367577082378}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Untagged
@@ -598,19 +644,6 @@ Transform:
   m_Father: {fileID: 2345640422149825139}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7115064367577082378
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115064367577082376}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 0.07, z: 0.03}
 --- !u!1 &7115064367973605287
 GameObject:
   m_ObjectHideFlags: 0

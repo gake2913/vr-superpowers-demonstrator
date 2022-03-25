@@ -23,6 +23,7 @@ public class CameraFly : PortalTraveller
         rb = GetComponent<Rigidbody>();
     }
 
+    private float updown = 0;
     // Update is called once per frame
     void Update()
     {
@@ -39,8 +40,12 @@ public class CameraFly : PortalTraveller
         Vector3 dir = Vector3.zero;
         dir += transform.right * Input.GetAxis("Horizontal");
         dir += transform.forward * Input.GetAxis("Vertical");
-        if (Input.GetKey(KeyCode.Q)) dir += transform.up * -1f;
-        if (Input.GetKey(KeyCode.E)) dir += transform.up;
+
+        float targetUpDown = 0;
+        if (Input.GetKey(KeyCode.Q)) targetUpDown = -1;
+        if (Input.GetKey(KeyCode.E)) targetUpDown = 1;
+        updown = Mathf.Lerp(updown, targetUpDown, 0.1f);
+        dir += Vector3.up * updown;
 
         //transform.Translate(dir * Speed * multiplier * Time.deltaTime, Space.Self);
         rb.velocity = dir * Speed * multiplier;
@@ -50,7 +55,7 @@ public class CameraFly : PortalTraveller
         if (mouseDelta.magnitude > 5) mouseDelta = Vector3.zero;
 
         pitch += mouseDelta.y;
-        if (pitch > 80 || pitch < -80) mouseDelta.y = 0;
+        //if (pitch > 80 || pitch < -80) mouseDelta.y = 0;
 
         Vector3 rot = transform.rotation.eulerAngles;
         rot.x += -mouseDelta.y * Sensitivity;
