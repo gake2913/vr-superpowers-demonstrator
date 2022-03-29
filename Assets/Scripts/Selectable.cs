@@ -9,7 +9,9 @@ public class Selectable : MonoBehaviour
     public Color OutlineColor = Color.red;
     [Range(0, 10)] public float OutlineWidth = 7f;
 
-    private Outline outline;
+    protected Outline outline;
+
+    private List<bool> highlights;
 
     // Start is called before the first frame update
     public void Start()
@@ -17,12 +19,32 @@ public class Selectable : MonoBehaviour
         outline = gameObject.AddComponent<Outline>();
         outline.OutlineColor = OutlineColor;
         outline.OutlineWidth = OutlineWidth;
+
+        highlights = new List<bool>();
     }
 
     // Update is called once per frame
     public void Update()
     {
         outline.enabled = Highlight;
+    }
+
+    private void LateUpdate()
+    {
+        if (highlights.Count > 0)
+        {
+            Highlight = false;
+            foreach (bool h in highlights)
+            {
+                if (h)
+                {
+                    Highlight = true;
+                    break;
+                }
+            }
+
+            highlights.Clear();
+        }
     }
 
     public virtual void Select(Selector selector)
@@ -43,5 +65,10 @@ public class Selectable : MonoBehaviour
     public virtual void HoverExit(Selector selector)
     {
         Debug.Log("Hover Exit " + gameObject.name);
+    }
+
+    public void ReferenceHighlight(bool highlight)
+    {
+        highlights.Add(highlight);
     }
 }
