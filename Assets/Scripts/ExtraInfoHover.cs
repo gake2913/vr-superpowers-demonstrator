@@ -22,9 +22,9 @@ public class ExtraInfoHover : Selectable
         base.Update();
     }
 
-    public override void Select()
+    public override void Select(Selector selector)
     {
-        base.Select();
+        base.Select(selector);
 
         Active = !Active;
 

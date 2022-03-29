@@ -8,6 +8,7 @@ public class Selector : MonoBehaviour
     [Range(0, 10)] public float Range = 5;
 
     private Selectable lastHighlight;
+    private Selectable lastClick;
 
     // Start is called before the first frame update
     void Start()
@@ -52,17 +53,18 @@ public class Selector : MonoBehaviour
             {
                 lastHighlight.Highlight = false;
                 lastHighlight = closest;
-                closest.HoverEnter();
+                closest.HoverEnter(this);
             }
             else if (lastHighlight == null)
             {
                 lastHighlight = closest;
-                closest.HoverEnter();
+                closest.HoverEnter(this);
             }
 
             if (Input.GetMouseButtonDown(0))
             {
-                closest.Select();
+                closest.Select(this);
+                lastClick = closest;
             }
         }
         else
@@ -70,9 +72,15 @@ public class Selector : MonoBehaviour
             if (lastHighlight != null)
             {
                 lastHighlight.Highlight = false;
-                lastHighlight.HoverExit();
+                lastHighlight.HoverExit(this);
                 lastHighlight = null;
             }
+        }
+
+        if (Input.GetMouseButtonUp(0) && lastClick != null)
+        {
+            lastClick.Deselect(this);
+            lastClick = null;
         }
     }
 }

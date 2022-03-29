@@ -70,6 +70,7 @@ public class SoundSelector : MonoBehaviour
                 source.mute = !active;
                 t.GetComponent<SoundDisplay>().SetActive(active);
             }
+
         }
 
         if (Input.GetKeyUp(KeyCode.C))

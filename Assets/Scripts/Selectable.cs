@@ -25,17 +25,22 @@ public class Selectable : MonoBehaviour
         outline.enabled = Highlight;
     }
 
-    public virtual void Select()
+    public virtual void Select(Selector selector)
     {
         Debug.Log("Selected " + gameObject.name);
     }
 
-    public virtual void HoverEnter()
+    public virtual void Deselect(Selector selector)
+    {
+        Debug.Log("Deselected " + gameObject.name);
+    }
+
+    public virtual void HoverEnter(Selector selector)
     {
         Debug.Log("Hover Enter " + gameObject.name);
     }
 
-    public virtual void HoverExit()
+    public virtual void HoverExit(Selector selector)
     {
         Debug.Log("Hover Exit " + gameObject.name);
     }

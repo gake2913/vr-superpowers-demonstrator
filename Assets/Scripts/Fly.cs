@@ -81,9 +81,9 @@ public class Fly : Selectable
         }
     }
 
-    public override void Select()
+    public override void Select(Selector selector)
     {
-        base.Select();
+        base.Select(selector);
 
         if (!PlayerMode)
         {
