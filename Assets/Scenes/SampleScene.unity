@@ -12302,6 +12302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4355942234362739285, guid: e7056275560ee6e46a1e0fb8af74327b, type: 3}
+      propertyPath: RedRoomRoot
+      value: 
+      objectReference: {fileID: 130856094}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7056275560ee6e46a1e0fb8af74327b, type: 3}
 --- !u!23 &2570646523448665507
