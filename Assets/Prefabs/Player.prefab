@@ -147,7 +147,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294966975
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -204,8 +204,8 @@ GameObject:
   - component: {fileID: 1724440243470097980}
   - component: {fileID: 1724440243470097981}
   - component: {fileID: 1724440243470097982}
-  - component: {fileID: 1524642124}
   - component: {fileID: 4355942234362739285}
+  - component: {fileID: 1724440244088642113}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -280,21 +280,6 @@ CapsuleCollider:
   m_Height: 1.6
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1524642124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724440243470097983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c79be951bf680f47aa4373e98c20e8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundObjectPrefab: {fileID: 3147697952633289623, guid: a650fadee511fae48893d7f5460185f6, type: 3}
-  MaxRange: 10
-  ScaleSoundObjects: 0
 --- !u!114 &4355942234362739285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +294,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WritingParentPrefab: {fileID: 4573872265522928656, guid: 0f72decef13692a4dbfae3c439ca6b93, type: 3}
   WritingDistance: 1
+  RedRoomRoot: {fileID: 0}
+  Thickness: 0.05
+  ThicknessMin: 0.02
+  ThicknessMax: 0.2
+  ThicknessStep: 0.01
+--- !u!114 &1724440244088642113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724440243470097983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1126d71ad55d44d4795929c7804f84c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VolumeFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.4714136
+      outSlope: -2.4714136
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.04261002
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.00031761208
+      inSlope: -0.021153416
+      outSlope: -0.006354575
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.13871236
+      outWeight: 0.14157894
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  VignetteAnimator: {fileID: 0}
+  TealRoomRoot: {fileID: 0}
 --- !u!1 &3099895262943060040
 GameObject:
   m_ObjectHideFlags: 0

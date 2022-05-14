@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PortalsVR;
 
 public class Fly : Selectable
 {
@@ -10,6 +11,7 @@ public class Fly : Selectable
     public float IdleRange = 0.1f;
     public float TargetIntervall = 0.1f;
     public GameObject FlyPlayerPrefab;
+    public Transform YellowRoomRoot;
 
     private bool lastIdle = true;
     private Vector3 targetPosition;
@@ -85,6 +87,10 @@ public class Fly : Selectable
     {
         base.Select(selector);
 
+        if (Mathf.Abs(transform.position.x - YellowRoomRoot.position.x) > 5) return;
+        if (Mathf.Abs(transform.position.y - YellowRoomRoot.position.y) > 10) return;
+        if (Mathf.Abs(transform.position.z - YellowRoomRoot.position.z) > 5) return;
+
         if (!PlayerMode)
         {
             // Go into player mode
@@ -122,7 +128,7 @@ public class Fly : Selectable
         Portal[] portals = FindObjectsOfType<Portal>();
         foreach (Portal portal in portals)
         {
-            portal.playerCam = flyCam;
+            //portal.playerCam = flyCam;
         }
 
         PlayerMode = true;
@@ -130,6 +136,10 @@ public class Fly : Selectable
 
     private void ExitPlayerMode()
     {
+        if (Mathf.Abs(flyPlayer.transform.position.x - YellowRoomRoot.position.x) > 5) return;
+        if (Mathf.Abs(flyPlayer.transform.position.y - YellowRoomRoot.position.y) > 10) return;
+        if (Mathf.Abs(flyPlayer.transform.position.z - YellowRoomRoot.position.z) > 5) return;
+
         Debug.Log("Leaving Fly Player Mode");
 
         Idle = true;
@@ -149,7 +159,7 @@ public class Fly : Selectable
         Portal[] portals = FindObjectsOfType<Portal>();
         foreach (Portal portal in portals)
         {
-            portal.playerCam = player.GetComponentInChildren<Camera>();
+            //portal.playerCam = player.GetComponentInChildren<Camera>();
         }
 
         transform.position = flyPlayer.transform.position;
