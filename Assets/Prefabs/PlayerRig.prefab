@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1147172114}
   - component: {fileID: 760781454}
   - component: {fileID: 760781455}
+  - component: {fileID: 258106688}
   m_Layer: 0
   m_Name: Right Eye
   m_TagString: MainCamera
@@ -101,6 +102,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33f207af81d7904abb23515f7c3fd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &258106688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147172110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 3902505895741488830}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1855382495
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +389,7 @@ GameObject:
   - component: {fileID: 3902505895741488825}
   - component: {fileID: 653916304}
   - component: {fileID: 653916306}
+  - component: {fileID: 461106792721516291}
   m_Layer: 0
   m_Name: Left Eye
   m_TagString: MainCamera
@@ -417,6 +479,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: 0
+--- !u!114 &461106792721516291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902505895741488827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 3902505895741488830}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &3902505895847650862
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +925,7 @@ GameObject:
   - component: {fileID: 3902505896791760945}
   - component: {fileID: 3902505896791760950}
   - component: {fileID: 6624506301191476735}
+  - component: {fileID: 2389238721001483450}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -880,6 +1003,46 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3902505896791760944}
   m_Enabled: 1
+--- !u!114 &2389238721001483450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902505896791760944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda39189f91ddd64da89957fa271ed34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerAxis: {fileID: -5684558904543120851, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
+  VolumeFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.4714136
+      outSlope: -2.4714136
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.04261002
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.00031761208
+      inSlope: -0.021153416
+      outSlope: -0.006354575
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.13871236
+      outWeight: 0.14157894
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  VignetteAnimator: {fileID: 0}
+  TealRoomRoot: {fileID: 0}
+  playerCam: {fileID: 3902505896791760945}
 --- !u!1 &5463666876607512961
 GameObject:
   m_ObjectHideFlags: 0
