@@ -18,7 +18,6 @@ public class VRSoundSelectorCone : MonoBehaviour
     private AudioSource[] audioSources;
 
     private bool buttonPrev = false;
-    private Type lastActiveType = null;
 
     // Start is called before the first frame update
     void Start()
