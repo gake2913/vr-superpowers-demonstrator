@@ -11,9 +11,6 @@ public class VRSelectorDistance : Selector
     public InputActionReference TriggerPress;
     public LineRenderer LineRenderer;
 
-    private Selectable lastHighlight;
-    private Selectable lastClick;
-
     private bool lastTriggerPress = false;
 
     // Start is called before the first frame update
@@ -129,5 +126,11 @@ public class VRSelectorDistance : Selector
         }
 
         return false;
+    }
+
+    private void OnDisable()
+    {
+        LineRenderer.gameObject.SetActive(true);
+        LineRenderer.SetPosition(1, Vector3.forward * 0.2f);
     }
 }

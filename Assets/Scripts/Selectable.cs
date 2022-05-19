@@ -55,6 +55,8 @@ public class Selectable : MonoBehaviour
     public virtual void Deselect(Selector selector)
     {
         Debug.Log("Deselected " + gameObject.name);
+
+        Highlight = false;
     }
 
     public virtual void HoverEnter(Selector selector)
@@ -65,6 +67,8 @@ public class Selectable : MonoBehaviour
     public virtual void HoverExit(Selector selector)
     {
         Debug.Log("Hover Exit " + gameObject.name);
+
+        Highlight = false;
     }
 
     public void ReferenceHighlight(bool highlight)

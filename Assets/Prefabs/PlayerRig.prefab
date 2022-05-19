@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 258106686}
   - component: {fileID: 258106685}
   - component: {fileID: 830649398010113025}
+  - component: {fileID: 7324333737840509574}
   m_Layer: 0
   m_Name: PlayerRig
   m_TagString: PlayerRig
@@ -645,7 +646,8 @@ MonoBehaviour:
   MoveAxis2D: {fileID: 7596212294181904713, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
   Speed: 2
   Rigidbody: {fileID: 258106686}
-  Direction: {fileID: 3902505895508411397}
+  Direction: {fileID: 7337848716655126998}
+  AnimSpeedTest: {fileID: 0}
 --- !u!114 &830649398010113025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +665,31 @@ MonoBehaviour:
   LowSensitivity: 0.2
   TimeSensitivity: 0.5
   TurnAmount: 45
+--- !u!114 &7324333737840509574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902505895847650862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7204e6b343df54fb98e49aad4a15c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveAxis2D: {fileID: 7596212294181904713, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
+  GripPress: {fileID: -8514278639596572500, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
+  TriggerPress: {fileID: 6986180202050166755, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
+  YellowRoomRoot: {fileID: 0}
+  Speed: 2
+  Rigidbody: {fileID: 258106686}
+  Direction: {fileID: 7337848716655126998}
+  AnimSpeedTest: {fileID: 0}
+  Head: {fileID: 3902505896791760945}
+  BodyCollider: {fileID: 1855382497}
+  HeadCollider: {fileID: 1079168114892315661}
+  selectorDistance: {fileID: 8066340779047964517}
+  selectorGrab: {fileID: 536000253}
 --- !u!1 &3902505896109352973
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +955,7 @@ GameObject:
   - component: {fileID: 3902505896791760950}
   - component: {fileID: 6624506301191476735}
   - component: {fileID: 2389238721001483450}
+  - component: {fileID: 1079168114892315661}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1045,6 +1073,19 @@ MonoBehaviour:
   VignetteAnimator: {fileID: 0}
   TealRoomRoot: {fileID: 0}
   playerCam: {fileID: 3902505896791760945}
+--- !u!135 &1079168114892315661
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902505896791760944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4972605009804875888
 GameObject:
   m_ObjectHideFlags: 0

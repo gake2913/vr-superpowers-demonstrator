@@ -7,8 +7,8 @@ public class Selector : MonoBehaviour
 
     [Range(0, 10)] public float Range = 5;
 
-    private Selectable lastHighlight;
-    private Selectable lastClick;
+    protected Selectable lastHighlight;
+    protected Selectable lastClick;
 
     // Start is called before the first frame update
     void Start()

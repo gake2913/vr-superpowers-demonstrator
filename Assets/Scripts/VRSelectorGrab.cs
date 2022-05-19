@@ -10,9 +10,6 @@ public class VRSelectorGrab : Selector
 
     public InputActionReference GripPress;
 
-    private Selectable lastHighlight;
-    private Selectable lastClick;
-
     private bool lastTriggerPress = false;
 
     private List<Selectable> hoveringSelectables = new List<Selectable>();
@@ -129,5 +126,10 @@ public class VRSelectorGrab : Selector
         {
             hoveringSelectables.Remove(selectable);
         }
+    }
+
+    public void ClearHovering()
+    {
+        hoveringSelectables.Clear();
     }
 }

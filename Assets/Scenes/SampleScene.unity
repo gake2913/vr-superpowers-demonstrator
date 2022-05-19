@@ -2797,6 +2797,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324333737840509574, guid: 7a9af4e2dff4abf4b87b402ecf9c2155, type: 3}
+      propertyPath: AnimSpeedTest
+      value: 
+      objectReference: {fileID: 1164717375}
+    - target: {fileID: 7324333737840509574, guid: 7a9af4e2dff4abf4b87b402ecf9c2155, type: 3}
+      propertyPath: YellowRoomRoot
+      value: 
+      objectReference: {fileID: 1155124069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a9af4e2dff4abf4b87b402ecf9c2155, type: 3}
 --- !u!1 &262424864
@@ -4955,8 +4963,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 503249671}
-  - component: {fileID: 503249673}
   - component: {fileID: 503249672}
+  - component: {fileID: 503249673}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Untagged
@@ -5001,17 +5009,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 503249670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e31f9e208e11d478c3cb4c05e26e84, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a591af1b1006164dad907b8e8cb2621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
-  Idle: 1
-  PlayerMode: 0
-  IdleRange: 0.1
-  TargetIntervall: 0.1
-  FlyPlayerPrefab: {fileID: 2345640422149825143, guid: 10a2c24a4885c524a8daf41172be8278, type: 3}
+  Player: {fileID: 1609038409}
   YellowRoomRoot: {fileID: 1155124069}
 --- !u!1 &507314982
 GameObject:
@@ -14386,6 +14390,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599287471}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1609038409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7324333737840509574, guid: 7a9af4e2dff4abf4b87b402ecf9c2155, type: 3}
+  m_PrefabInstance: {fileID: 258106683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7204e6b343df54fb98e49aad4a15c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646729074
 GameObject:
   m_ObjectHideFlags: 0
