@@ -11,6 +11,8 @@ public class VRMovement : MonoBehaviour
     public Rigidbody Rigidbody;
     public Transform Direction;
 
+    public AnimSpeedTest AnimSpeedTest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,7 @@ public class VRMovement : MonoBehaviour
         Vector3 vel3 = Direction.forward * vel.y + Direction.right * vel.x;
         vel3.y = Rigidbody.velocity.y;
         Rigidbody.velocity = vel3;
+
+        AnimSpeedTest.AnimationSpeed = vel3.magnitude;
     }
 }
