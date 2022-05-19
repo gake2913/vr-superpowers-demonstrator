@@ -2101,6 +2101,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 625469075}
 --- !u!65 &219168059
@@ -2634,6 +2635,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Selected: 0
 --- !u!54 &251985635
 Rigidbody:
@@ -2919,6 +2921,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 664948321}
 --- !u!1 &264180263
@@ -4342,6 +4345,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Referencing: {fileID: 1559289110}
 --- !u!114 &420574276 stripped
 MonoBehaviour:
@@ -5015,6 +5019,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Player: {fileID: 1609038409}
   YellowRoomRoot: {fileID: 1155124069}
 --- !u!1 &507314982
@@ -5693,6 +5698,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Idle: 1
   PlayerMode: 0
   IdleRange: 0.1
@@ -6395,6 +6401,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 1486711593}
 --- !u!1 &662638219
@@ -7401,6 +7408,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 863566926}
 --- !u!65 &755193031
@@ -8189,7 +8197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 363600781165421612, guid: ebb70fee7149ad9449f589f3214eeb10, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 363600781165421612, guid: ebb70fee7149ad9449f589f3214eeb10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8291,6 +8299,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 845538114}
 --- !u!1 &857335768
@@ -10029,6 +10038,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Referencing: {fileID: 251985634}
 --- !u!1 &1055408309
 GameObject:
@@ -11291,6 +11301,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Referencing: {fileID: 1646729076}
 --- !u!1 &1220676413
 GameObject:
@@ -11859,6 +11870,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Referencing: {fileID: 1700407128}
 --- !u!1 &1272134715
 GameObject:
@@ -14118,6 +14130,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Selected: 0
 --- !u!54 &1559289111
 Rigidbody:
@@ -14452,6 +14465,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Selected: 0
 --- !u!54 &1646729077
 Rigidbody:
@@ -15136,6 +15150,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Selected: 0
 --- !u!54 &1700407129
 Rigidbody:
@@ -16187,6 +16202,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Referencing: {fileID: 219168058}
 --- !u!1 &1771549176
 GameObject:
@@ -19173,6 +19189,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 845538114}
 --- !u!65 &2006216108
@@ -20015,6 +20032,7 @@ MonoBehaviour:
   Highlight: 0
   OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 7
+  DebugMessages: 0
   Active: 0
   CanvasGroup: {fileID: 664948321}
 --- !u!1 &2077277004

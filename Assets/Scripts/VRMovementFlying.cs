@@ -24,6 +24,8 @@ public class VRMovementFlying : MonoBehaviour
     public VRSelectorDistance selectorDistance;
     public VRSelectorGrab selectorGrab;
 
+    public VRHandModelSwitch[] handSwitcher;
+
     private VRMovement vrMovement;
     private bool flyingActive = false;
     private bool switchBackAllowed = false;
@@ -73,6 +75,8 @@ public class VRMovementFlying : MonoBehaviour
         selectorGrab.enabled = false;
         selectorDistance.enabled = false;
 
+        foreach (VRHandModelSwitch s in handSwitcher) s.ChangeModel(0, false);
+
         playerParent = transform.parent;
         playerPos = transform.position;
         playerRot = transform.rotation;
@@ -98,6 +102,8 @@ public class VRMovementFlying : MonoBehaviour
         selectorDistance.enabled = true;
         selectorGrab.enabled = true;
         selectorGrab.ClearHovering();
+
+        foreach (VRHandModelSwitch s in handSwitcher) s.ChangeModel(-1, false);
 
         fly.gameObject.SetActive(true);
         fly.transform.position = Head.position;

@@ -8,6 +8,7 @@ public class Selectable : MonoBehaviour
     public bool Highlight = false;
     public Color OutlineColor = Color.red;
     [Range(0, 10)] public float OutlineWidth = 7f;
+    public bool DebugMessages = false;
 
     protected Outline outline;
 
@@ -49,24 +50,28 @@ public class Selectable : MonoBehaviour
 
     public virtual void Select(Selector selector)
     {
-        Debug.Log("Selected " + gameObject.name);
+        if (DebugMessages)
+            Debug.Log("Selected " + gameObject.name);
     }
 
     public virtual void Deselect(Selector selector)
     {
-        Debug.Log("Deselected " + gameObject.name);
+        if (DebugMessages)
+            Debug.Log("Deselected " + gameObject.name);
 
         Highlight = false;
     }
 
     public virtual void HoverEnter(Selector selector)
     {
-        Debug.Log("Hover Enter " + gameObject.name);
+        if (DebugMessages)
+            Debug.Log("Hover Enter " + gameObject.name);
     }
 
     public virtual void HoverExit(Selector selector)
     {
-        Debug.Log("Hover Exit " + gameObject.name);
+        if (DebugMessages)
+            Debug.Log("Hover Exit " + gameObject.name);
 
         Highlight = false;
     }
