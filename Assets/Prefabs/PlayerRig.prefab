@@ -1166,6 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 2
+  HandModelSwitch: {fileID: 1719257728}
   TriggerAxis: {fileID: 2526168894431210536, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
   TriggerPress: {fileID: 6986180202050166755, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
   LineRenderer: {fileID: 7564036207418434581}
@@ -1377,6 +1378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 0.05
+  HandModelSwitch: {fileID: 623531364}
   GripPress: {fileID: -8514278639596572500, guid: 4b85471084547e34faff78c4dfe841e5, type: 3}
 --- !u!135 &536000255
 SphereCollider:

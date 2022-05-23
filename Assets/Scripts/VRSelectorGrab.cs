@@ -76,6 +76,13 @@ public class VRSelectorGrab : Selector
         {
             lastClick.Deselect(this);
             lastClick = null;
+            if (lastHighlight != null)
+            {
+                lastHighlight.Highlight = false;
+                lastHighlight.HoverExit(this);
+                lastHighlight = null;
+            }
+            hoveringSelectables.Remove(lastClick);
         }
 
         lastTriggerPress = triggerPressed;

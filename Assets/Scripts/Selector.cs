@@ -6,6 +6,7 @@ public class Selector : MonoBehaviour
 {
 
     [Range(0, 10)] public float Range = 5;
+    public VRHandModelSwitch HandModelSwitch;
 
     protected Selectable lastHighlight;
     protected Selectable lastClick;
