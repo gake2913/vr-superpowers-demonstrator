@@ -26,6 +26,8 @@ public class VRMovementFlying : MonoBehaviour
 
     public VRHandModelSwitch[] handSwitcher;
 
+    public Animator FadeToBlack;
+
     private VRMovement vrMovement;
     private bool flyingActive = false;
     private bool switchBackAllowed = false;
@@ -92,6 +94,14 @@ public class VRMovementFlying : MonoBehaviour
         if (Mathf.Abs(transform.position.y - YellowRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - YellowRoomRoot.position.z) > 5) return;
 
+        FadeToBlack.SetTrigger("Fade");
+        StartCoroutine(DeactivateCorouting());
+    }
+
+    private IEnumerator DeactivateCorouting()
+    {
+        yield return new WaitForSeconds(0.5f);
+
         flyingActive = false;
         vrMovement.enabled = true;
         Rigidbody.useGravity = true;
@@ -113,7 +123,7 @@ public class VRMovementFlying : MonoBehaviour
         transform.position = playerPos;
         transform.rotation = playerRot;
 
-        
+
         fly.GetComponent<VRFly>().ExitFlyMode();
         fly.GetComponent<VRFly>().HoverExit(null);
     }

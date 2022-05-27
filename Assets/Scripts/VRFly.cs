@@ -8,6 +8,8 @@ public class VRFly : Selectable
     public VRMovementFlying Player;
     public Transform YellowRoomRoot;
 
+    public Animator FadeToBlack;
+
     private bool flyMode = false;
 
     // Start is called before the first frame update
@@ -35,6 +37,13 @@ public class VRFly : Selectable
 
     private void EnterFlyMode()
     {
+        FadeToBlack.SetTrigger("Fade");
+        StartCoroutine(EnterFlyModeCorouting());
+    }
+
+    private IEnumerator EnterFlyModeCorouting()
+    {
+        yield return new WaitForSeconds(0.5f);
         flyMode = true;
         Highlight = false;
         Player.Activate(transform);
