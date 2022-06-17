@@ -30,10 +30,10 @@ public class VRHandModelSwitch : MonoBehaviour
             model.SetActive(false);
         }
 
-        GameObject original = Instantiate(OriginalModel, transform);
-        original.transform.localPosition = Vector3.zero;
-        original.transform.localRotation = Quaternion.identity;
-        spawnedOriginal = original;
+        //GameObject original = Instantiate(OriginalModel, transform);
+        //original.transform.localPosition = Vector3.zero;
+        //original.transform.localRotation = Quaternion.identity;
+        spawnedOriginal = OriginalModel;
 
         shownModel = spawnedOriginal;
         shownModel.SetActive(true);

@@ -4971,6 +4971,26 @@ PrefabInstance:
       propertyPath: YellowRoomRoot
       value: 
       objectReference: {fileID: 1155124069}
+    - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomRed
+      value: 
+      objectReference: {fileID: 130856094}
+    - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomBlue
+      value: 
+      objectReference: {fileID: 1820648761}
+    - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomTeal
+      value: 
+      objectReference: {fileID: 1726926558}
+    - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomGreen
+      value: 
+      objectReference: {fileID: 1959466699}
+    - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomYellow
+      value: 
+      objectReference: {fileID: 1155124069}
     - target: {fileID: 6191474078242996140, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: m_Name
       value: XR Origin
@@ -5019,22 +5039,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6191474078393754564, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191474078393754564, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191474078393754564, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191474078393754564, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomRed
+      value: 
+      objectReference: {fileID: 130856094}
+    - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomBlue
+      value: 
+      objectReference: {fileID: 1820648761}
+    - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomTeal
+      value: 
+      objectReference: {fileID: 1726926558}
+    - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomGreen
+      value: 
+      objectReference: {fileID: 1959466699}
+    - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: RoomYellow
+      value: 
+      objectReference: {fileID: 1155124069}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
 --- !u!1 &914312991
