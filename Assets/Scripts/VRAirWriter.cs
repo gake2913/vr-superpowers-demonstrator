@@ -18,8 +18,6 @@ public class VRAirWriter : MonoBehaviour
     public float ThicknessMax = 0.2f;
     public bool WritingActive = false;
 
-    private Grabbable grabbable;
-
     private Transform currentParent;
 
     private bool lastWritingActive = false;
@@ -27,7 +25,7 @@ public class VRAirWriter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grabbable = GetComponent<Grabbable>();
+        
     }
 
     // Update is called once per frame
@@ -37,34 +35,31 @@ public class VRAirWriter : MonoBehaviour
         if (Mathf.Abs(transform.position.y - RedRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - RedRoomRoot.position.z) > 10) return;
 
-        if (grabbable.Selected)
+        float triggerValue = TriggerPress.action.ReadValue<float>();
+        WritingActive = triggerValue > TriggerMin;
+        float TriggerMod = (triggerValue - TriggerMin) / (TriggerMax - TriggerMin);
+        Thickness = ThicknessMin + (ThicknessMax - ThicknessMin) * TriggerMod;
+
+        if (WritingActive && !lastWritingActive)
         {
-            float triggerValue = TriggerPress.action.ReadValue<float>();
-            WritingActive = triggerValue > TriggerMin;
-            float TriggerMod = (triggerValue - TriggerMin) / (TriggerMax - TriggerMin);
-            Thickness = ThicknessMin + (ThicknessMax - ThicknessMin) * TriggerMod;
-
-            if (WritingActive && !lastWritingActive)
-            {
-                GameObject parent = Instantiate(WritingParentPrefab);
-                parent.transform.position = WritingOrigin.position;
-                currentParent = parent.transform;
-                lastWritingActive = true;
-            }
-
-            if (WritingActive)
-            {
-                currentParent.position = WritingOrigin.position;
-                //Debug.Log(Thickness);
-                currentParent.GetComponent<AirWriterControl>().UpdateThickness(Thickness);
-            }
-
-            if (!WritingActive && lastWritingActive)
-            {
-                currentParent = null;
-            }
-
-            lastWritingActive = WritingActive;
+            GameObject parent = Instantiate(WritingParentPrefab);
+            parent.transform.position = WritingOrigin.position;
+            currentParent = parent.transform;
+            lastWritingActive = true;
         }
+
+        if (WritingActive)
+        {
+            currentParent.position = WritingOrigin.position;
+            //Debug.Log(Thickness);
+            currentParent.GetComponent<AirWriterControl>().UpdateThickness(Thickness);
+        }
+
+        if (!WritingActive && lastWritingActive)
+        {
+            currentParent = null;
+        }
+
+        lastWritingActive = WritingActive;
     }
 }

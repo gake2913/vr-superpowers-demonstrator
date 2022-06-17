@@ -35,8 +35,8 @@ public class InvisibleTeleporter : MonoBehaviour
         IsTeleporting = true;
         ConnectedTeleporter.IsTeleporting = true;
 
-        Matrix4x4 m = ConnectedTeleporter.transform.localToWorldMatrix * transform.worldToLocalMatrix * other.transform.parent.localToWorldMatrix;
-        other.transform.parent.SetPositionAndRotation(m.GetColumn(3), m.rotation);
+        Matrix4x4 m = ConnectedTeleporter.transform.localToWorldMatrix * transform.worldToLocalMatrix * other.transform.localToWorldMatrix;
+        other.transform.SetPositionAndRotation(m.GetColumn(3), m.rotation);
     }
 
     private void OnTriggerExit(Collider other)

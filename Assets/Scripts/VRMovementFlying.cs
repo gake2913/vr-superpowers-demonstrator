@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRMovementFlying : MonoBehaviour
 {
@@ -12,23 +14,21 @@ public class VRMovementFlying : MonoBehaviour
     public InputActionReference TriggerPress;
     public Transform YellowRoomRoot;
     public float Speed = 2f;
-    public Rigidbody Rigidbody;
+    public CharacterController CharacterController;
     public Transform Direction;
 
-    public AnimSpeedTest AnimSpeedTest;
-
-    public Transform Head;
-    public Collider BodyCollider;
-    public Collider HeadCollider;
-
-    public VRSelectorDistance selectorDistance;
-    public VRSelectorGrab selectorGrab;
+    public XRRayInteractor selectorDistance;
+    public XRDirectInteractor selectorGrab;
 
     public VRHandModelSwitch[] handSwitcher;
 
+    public XROrigin XROrigin;
+
     public Animator FadeToBlack;
 
-    private VRMovement vrMovement;
+    public ActionBasedContinuousMoveProvider vrMovement;
+    public CharacterControllerDriver characterControllerDriver;
+
     private bool flyingActive = false;
     private bool switchBackAllowed = false;
 
@@ -41,7 +41,7 @@ public class VRMovementFlying : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vrMovement = GetComponent<VRMovement>();
+        
     }
 
     // Update is called once per frame
@@ -58,9 +58,9 @@ public class VRMovementFlying : MonoBehaviour
 
         Vector2 vel = MoveAxis2D.action.ReadValue<Vector2>() * Speed;
         Vector3 vel3 = Direction.forward * vel.y + Direction.right * vel.x;
-        Rigidbody.velocity = vel3;
+        CharacterController.Move(vel3 * Time.deltaTime);
 
-        AnimSpeedTest.AnimationSpeed = vel3.magnitude;
+        if (vel.magnitude != 0) CharacterController.center = XROrigin.CameraInOriginSpacePos;
     }
 
     public void Activate(Transform fly)
@@ -68,12 +68,11 @@ public class VRMovementFlying : MonoBehaviour
         flyingActive = true;
         switchBackAllowed = false;
         vrMovement.enabled = false;
-        Rigidbody.useGravity = false;
+        characterControllerDriver.enabled = false;
+        //CharacterController.useGravity = false;
 
-        HeadCollider.enabled = true;
-        BodyCollider.enabled = false;
+        CharacterController.height = 0;
 
-        selectorGrab.ClearHovering();
         selectorGrab.enabled = false;
         selectorDistance.enabled = false;
 
@@ -83,41 +82,44 @@ public class VRMovementFlying : MonoBehaviour
         playerPos = transform.position;
         playerRot = transform.rotation;
 
-        transform.position = fly.position - Head.localPosition;
+        transform.position = fly.position - XROrigin.CameraInOriginSpacePos;
         this.fly = fly;
         fly.gameObject.SetActive(false);
     }
 
     public void Deactivate()
     {
+        //Debug.Log("Deactivate");
+
         if (Mathf.Abs(transform.position.x - YellowRoomRoot.position.x) > 5) return;
         if (Mathf.Abs(transform.position.y - YellowRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - YellowRoomRoot.position.z) > 5) return;
 
+        //Debug.Log("De 2");
+
         FadeToBlack.SetTrigger("Fade");
-        StartCoroutine(DeactivateCorouting());
+        StartCoroutine(DeactivateCoroutine());
     }
 
-    private IEnumerator DeactivateCorouting()
+    private IEnumerator DeactivateCoroutine()
     {
+        flyingActive = false;
+
         yield return new WaitForSeconds(0.5f);
 
-        flyingActive = false;
+        
         vrMovement.enabled = true;
-        Rigidbody.useGravity = true;
-
-        HeadCollider.enabled = false;
-        BodyCollider.enabled = true;
+        characterControllerDriver.enabled = true;
+        //CharacterController.useGravity = true;
 
         selectorDistance.enabled = true;
         selectorGrab.enabled = true;
-        selectorGrab.ClearHovering();
 
         foreach (VRHandModelSwitch s in handSwitcher) s.ChangeModel(-1, false);
 
         fly.gameObject.SetActive(true);
-        fly.transform.position = Head.position;
-        fly.transform.rotation = Head.rotation;
+        fly.transform.position = XROrigin.Camera.transform.position;
+        fly.transform.rotation = XROrigin.Camera.transform.rotation;
 
         transform.parent = playerParent;
         transform.position = playerPos;
@@ -125,7 +127,6 @@ public class VRMovementFlying : MonoBehaviour
 
 
         fly.GetComponent<VRFly>().ExitFlyMode();
-        fly.GetComponent<VRFly>().HoverExit(null);
     }
 
     Type lastActiveType = null;

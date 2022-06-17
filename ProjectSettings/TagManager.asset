@@ -4,18 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - projectile
-  - FxTemporaire
   - PlayerRig
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Post-Processing
   - Water
   - UI
-  - Ghostvision
-  - Post-Process
+  - 
+  - 
   - 
   - 
   - 

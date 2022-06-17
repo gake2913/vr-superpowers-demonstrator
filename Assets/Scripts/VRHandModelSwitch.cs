@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRHandModelSwitch : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class VRHandModelSwitch : MonoBehaviour
     private GameObject shownModel = null;
 
     private GameObject[] spawnedModels;
+    private GameObject spawnedOriginal;
 
     private bool hide = false;
 
@@ -28,7 +30,12 @@ public class VRHandModelSwitch : MonoBehaviour
             model.SetActive(false);
         }
 
-        shownModel = OriginalModel;
+        GameObject original = Instantiate(OriginalModel, transform);
+        original.transform.localPosition = Vector3.zero;
+        original.transform.localRotation = Quaternion.identity;
+        spawnedOriginal = original;
+
+        shownModel = spawnedOriginal;
         shownModel.SetActive(true);
     }
 
@@ -50,7 +57,7 @@ public class VRHandModelSwitch : MonoBehaviour
 
         shownModel.SetActive(false);
         
-        if (index == -1) shownModel = OriginalModel;
+        if (index == -1) shownModel = spawnedOriginal;
         else shownModel = spawnedModels[index];
 
         if (!hide)

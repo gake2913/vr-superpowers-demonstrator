@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRFly : Selectable
+public class VRFly : MonoBehaviour
 {
 
     public VRMovementFlying Player;
@@ -13,21 +13,19 @@ public class VRFly : Selectable
     private bool flyMode = false;
 
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
-        base.Start();
+        
     }
 
     // Update is called once per frame
-    new void Update()
+    void Update()
     {
-        base.Update();
+        
     }
 
-    public override void Select(Selector selector)
+    public void Select()
     {
-        base.Select(selector);
-
         if (Mathf.Abs(transform.position.x - YellowRoomRoot.position.x) > 5) return;
         if (Mathf.Abs(transform.position.y - YellowRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - YellowRoomRoot.position.z) > 5) return;
@@ -45,13 +43,11 @@ public class VRFly : Selectable
     {
         yield return new WaitForSeconds(0.5f);
         flyMode = true;
-        Highlight = false;
         Player.Activate(transform);
     }
 
     public void ExitFlyMode()
     {
         flyMode = false;
-        Highlight = false;
     }
 }
