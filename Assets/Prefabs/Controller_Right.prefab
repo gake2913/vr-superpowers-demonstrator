@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &877343386423003992
 Transform:
   m_ObjectHideFlags: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
   ColorBlue: {r: 0.49803925, g: 0.74509805, b: 0.9058824, a: 1}
   ColorTeal: {r: 0.70980394, g: 0.86666673, b: 0.80392164, a: 1}
   ParticleSystem: {fileID: 959434879676125792}
+  ParticleMaterial: {fileID: 0}
 --- !u!1 &8909138569764806111
 GameObject:
   m_ObjectHideFlags: 0

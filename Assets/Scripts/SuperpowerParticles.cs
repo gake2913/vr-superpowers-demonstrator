@@ -16,14 +16,15 @@ public class SuperpowerParticles : MonoBehaviour
     public Transform RoomTeal;
 
     [Space()]
-    public Color ColorRed;
-    public Color ColorYellow;
-    public Color ColorGreen;
-    public Color ColorBlue;
-    public Color ColorTeal;
+    [ColorUsage(true, true)] public Color ColorRed;
+    [ColorUsage(true, true)] public Color ColorYellow;
+    [ColorUsage(true, true)] public Color ColorGreen;
+    [ColorUsage(true, true)] public Color ColorBlue;
+    [ColorUsage(true, true)] public Color ColorTeal;
 
     [Space()]
     public ParticleSystem ParticleSystem;
+    public Material ParticleMaterial;
 
     private int currentRoom = -1;
     private int lastRoom = -1;
@@ -85,11 +86,11 @@ public class SuperpowerParticles : MonoBehaviour
             var main = ParticleSystem.main;
             switch (currentRoom)
             {
-                case 0: main.startColor = ColorRed; break;
-                case 1: main.startColor = ColorYellow; break;
-                case 2: main.startColor = ColorGreen; break;
-                case 3: main.startColor = ColorBlue; break;
-                case 4: main.startColor = ColorTeal; break;
+                case 0: main.startColor = ColorRed; ParticleMaterial.SetColor("_EmissionColor", ColorRed); break;
+                case 1: main.startColor = ColorYellow; ParticleMaterial.SetColor("_EmissionColor", ColorYellow); break;
+                case 2: main.startColor = ColorGreen; ParticleMaterial.SetColor("_EmissionColor", ColorGreen); break;
+                case 3: main.startColor = ColorBlue; ParticleMaterial.SetColor("_EmissionColor", ColorBlue); break;
+                case 4: main.startColor = ColorTeal; ParticleMaterial.SetColor("_EmissionColor", ColorTeal); break;
             }
 
             ParticleSystem.Play();
