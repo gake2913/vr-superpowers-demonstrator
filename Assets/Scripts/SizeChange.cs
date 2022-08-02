@@ -8,6 +8,7 @@ public class SizeChange : MonoBehaviour
 
     public LineRenderer LineRenderer;
     public ActionBasedContinuousMoveProvider Move;
+    public AnimationCurve SizeToSpeedCurve;
 
     private float lineWidth;
     private float speed;
@@ -31,6 +32,6 @@ public class SizeChange : MonoBehaviour
 
         transform.localScale = new Vector3(scale, scale, scale);
         LineRenderer.widthMultiplier = scale * lineWidth;
-        Move.moveSpeed = scale * speed;
+        Move.moveSpeed = SizeToSpeedCurve.Evaluate(height) * speed;
     }
 }
