@@ -41,45 +41,11 @@ public class SuperpowerParticles : MonoBehaviour
     {
         currentRoom = -1;
 
-        if (Mathf.Abs(XROrigin.Camera.transform.position.x - RoomRed.position.x) < 10)
-        {
-            if (Mathf.Abs(XROrigin.Camera.transform.position.y - RoomRed.position.y) < 20)
-            {
-                if (Mathf.Abs(XROrigin.Camera.transform.position.z - RoomRed.position.z) < 10) currentRoom = 0;
-            }
-        }
-
-        if (Mathf.Abs(XROrigin.Camera.transform.position.x - RoomYellow.position.x) < 5)
-        {
-            if (Mathf.Abs(XROrigin.Camera.transform.position.y - RoomYellow.position.y) < 10)
-            {
-                if (Mathf.Abs(XROrigin.Camera.transform.position.z - RoomYellow.position.z) < 5) currentRoom = 1;
-            }
-        }
-
-        if (Mathf.Abs(XROrigin.Camera.transform.position.x - RoomGreen.position.x) < 5)
-        {
-            if (Mathf.Abs(XROrigin.Camera.transform.position.y - RoomGreen.position.y) < 10)
-            {
-                if (Mathf.Abs(XROrigin.Camera.transform.position.z - RoomGreen.position.z) < 5) currentRoom = 2;
-            }
-        }
-
-        if (Mathf.Abs(XROrigin.Camera.transform.position.x - RoomBlue.position.x) < 5)
-        {
-            if (Mathf.Abs(XROrigin.Camera.transform.position.y - RoomBlue.position.y) < 10)
-            {
-                if (Mathf.Abs(XROrigin.Camera.transform.position.z - RoomBlue.position.z) < 5) currentRoom = 3;
-            }
-        }
-
-        if (Mathf.Abs(XROrigin.Camera.transform.position.x - RoomTeal.position.x) < 5)
-        {
-            if (Mathf.Abs(XROrigin.Camera.transform.position.y - RoomTeal.position.y) < 10)
-            {
-                if (Mathf.Abs(XROrigin.Camera.transform.position.z - RoomTeal.position.z) < 5) currentRoom = 4;
-            }
-        }
+        if (PowersManager.instance.RedActive) currentRoom = 0;
+        if (PowersManager.instance.YellowActive) currentRoom = 1;
+        if (PowersManager.instance.GreenActive) currentRoom = 2;
+        if (PowersManager.instance.BlueActive) currentRoom = 3;
+        if (PowersManager.instance.TealActive) currentRoom = 4;
 
         if (currentRoom != -1 && lastRoom == -1)
         {

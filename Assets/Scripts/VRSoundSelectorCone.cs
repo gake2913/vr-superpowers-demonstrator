@@ -13,9 +13,9 @@ public class VRSoundSelectorCone : MonoBehaviour
     public Animator VignetteAnimator;
     public Transform TealRoomRoot;
     public Transform playerCam;
+    public GameObject SoundSourcePrefab;
 
-    private Dictionary<AudioSource, float> sourceVolumes;
-    private AudioSource[] audioSources;
+    private List<SoundSelectorSource> soundSources = new List<SoundSelectorSource>();
 
     private bool buttonPrev = false;
 
@@ -23,8 +23,6 @@ public class VRSoundSelectorCone : MonoBehaviour
     void Start()
     {
         buttonPrev = TriggerAxis.action.ReadValue<float>() > 0.5f;
-
-        sourceVolumes = new Dictionary<AudioSource, float>();
     }
 
     // Update is called once per frame
@@ -40,30 +38,34 @@ public class VRSoundSelectorCone : MonoBehaviour
         {
             VignetteAnimator.SetTrigger("On");
 
-            audioSources = FindObjectsOfType<AudioSource>();
+            AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource source in audioSources)
             {
-                sourceVolumes[source] = source.volume;
+                GameObject soundSourceGO = Instantiate(SoundSourcePrefab, source.transform);
+                SoundSelectorSource soundSource = soundSourceGO.GetComponent<SoundSelectorSource>();
+                soundSources.Add(soundSource);
+                soundSource.AudioSource = source;
+                soundSource.Player = playerCam;
 
                 Vector3 camForward = playerCam.forward;
                 Vector3 toSource = source.transform.position - playerCam.position;
 
                 float angle = Vector3.Angle(camForward, toSource);
 
-                source.volume = sourceVolumes[source] * VolumeFalloff.Evaluate(angle / 180f);
+                soundSource.SetVolume(VolumeFalloff.Evaluate(angle / 180f));
             }
         }
 
         if (buttonActive)
         {
-            foreach(AudioSource source in audioSources)
+            foreach (SoundSelectorSource source in soundSources)
             {
                 Vector3 camForward = playerCam.forward;
                 Vector3 toSource = source.transform.position - playerCam.position;
 
                 float angle = Vector3.Angle(camForward, toSource);
 
-                source.volume = sourceVolumes[source] * VolumeFalloff.Evaluate(angle / 180f);
+                source.SetVolume(VolumeFalloff.Evaluate(angle / 180f));
             }
 
         }
@@ -72,9 +74,10 @@ public class VRSoundSelectorCone : MonoBehaviour
         {
             VignetteAnimator.SetTrigger("Off");
 
-            foreach(AudioSource source in audioSources)
+            foreach (SoundSelectorSource source in soundSources)
             {
-                source.volume = sourceVolumes[source];
+                source.Reset();
+                Destroy(source.gameObject);
             }
         }
 

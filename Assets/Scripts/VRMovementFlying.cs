@@ -35,6 +35,7 @@ public class VRMovementFlying : MonoBehaviour
     private Transform playerParent;
     private Vector3 playerPos;
     private Quaternion playerRot;
+    private float colliderSize;
 
     private Transform fly;
 
@@ -81,6 +82,8 @@ public class VRMovementFlying : MonoBehaviour
         playerParent = transform.parent;
         playerPos = transform.position;
         playerRot = transform.rotation;
+        colliderSize = CharacterController.radius;
+        CharacterController.radius = 0.1f;
 
         transform.position = fly.position - XROrigin.CameraInOriginSpacePos;
         this.fly = fly;
@@ -124,7 +127,7 @@ public class VRMovementFlying : MonoBehaviour
         transform.parent = playerParent;
         transform.position = playerPos;
         transform.rotation = playerRot;
-
+        CharacterController.radius = colliderSize;
 
         fly.GetComponent<VRFly>().ExitFlyMode();
     }

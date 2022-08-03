@@ -8,16 +8,15 @@ public class SoundSelectorCone : MonoBehaviour
     public AnimationCurve VolumeFalloff;
     public Animator VignetteAnimator;
     public Transform TealRoomRoot;
+    public GameObject SoundSourcePrefab;
 
     private Transform playerCam;
-    private Dictionary<AudioSource, float> sourceVolumes;
-    private AudioSource[] audioSources;
+    private List<SoundSelectorSource> soundSources = new List<SoundSelectorSource>();
 
     // Start is called before the first frame update
     void Start()
     {
         playerCam = Camera.main.transform;
-        sourceVolumes = new Dictionary<AudioSource, float>();
     }
 
     // Update is called once per frame
@@ -31,30 +30,34 @@ public class SoundSelectorCone : MonoBehaviour
         {
             VignetteAnimator.SetTrigger("On");
 
-            audioSources = FindObjectsOfType<AudioSource>();
+            AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource source in audioSources)
             {
-                sourceVolumes[source] = source.volume;
+                GameObject soundSourceGO = Instantiate(SoundSourcePrefab, source.transform);
+                SoundSelectorSource soundSource = soundSourceGO.GetComponent<SoundSelectorSource>();
+                soundSources.Add(soundSource);
+                soundSource.AudioSource = source;
+                soundSource.Player = playerCam;
 
                 Vector3 camForward = playerCam.forward;
                 Vector3 toSource = source.transform.position - playerCam.position;
 
                 float angle = Vector3.Angle(camForward, toSource);
 
-                source.volume = sourceVolumes[source] * VolumeFalloff.Evaluate(angle / 180f);
+                soundSource.SetVolume(VolumeFalloff.Evaluate(angle / 180f));
             }
         }
 
         if (Input.GetKey(KeyCode.C))
         {
-            foreach(AudioSource source in audioSources)
+            foreach(SoundSelectorSource source in soundSources)
             {
                 Vector3 camForward = playerCam.forward;
                 Vector3 toSource = source.transform.position - playerCam.position;
 
                 float angle = Vector3.Angle(camForward, toSource);
 
-                source.volume = sourceVolumes[source] * VolumeFalloff.Evaluate(angle / 180f);
+                source.SetVolume(VolumeFalloff.Evaluate(angle / 180f));
             }
 
         }
@@ -63,9 +66,9 @@ public class SoundSelectorCone : MonoBehaviour
         {
             VignetteAnimator.SetTrigger("Off");
 
-            foreach(AudioSource source in audioSources)
+            foreach(SoundSelectorSource source in soundSources)
             {
-                source.volume = sourceVolumes[source];
+                source.Reset();
             }
         }
     }
