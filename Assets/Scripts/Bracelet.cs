@@ -14,10 +14,12 @@ public class Bracelet : MonoBehaviour
 
     private bool onSocket = false;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,9 +28,7 @@ public class Bracelet : MonoBehaviour
         PowerActive = true;
         if (onSocket)
         {
-            if (Mathf.Abs(transform.position.y - RoomRoot.position.y) > RoomLimits.y) PowerActive = false;
-            if (Mathf.Abs(transform.position.x - RoomRoot.position.x) > RoomLimits.x) PowerActive = false;
-            if (Mathf.Abs(transform.position.z - RoomRoot.position.z) > RoomLimits.z) PowerActive = false;
+            if (!InsideRoom()) PowerActive = false;
         }
         else
         {
@@ -36,6 +36,7 @@ public class Bracelet : MonoBehaviour
         }
 
         PowersManager.instance.PowerSet(Color, PowerActive);
+        animator.SetBool("InsideRoom", InsideRoom());
     }
 
     public void PutOn()
@@ -46,5 +47,13 @@ public class Bracelet : MonoBehaviour
     public void TakeOff()
     {
         onSocket = false;
+    }
+
+    private bool InsideRoom()
+    {
+        if (Mathf.Abs(transform.position.y - RoomRoot.position.y) > RoomLimits.y) return false;
+        if (Mathf.Abs(transform.position.x - RoomRoot.position.x) > RoomLimits.x) return false;
+        if (Mathf.Abs(transform.position.z - RoomRoot.position.z) > RoomLimits.z) return false;
+        return true;
     }
 }
