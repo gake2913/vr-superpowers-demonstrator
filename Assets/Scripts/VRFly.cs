@@ -30,6 +30,8 @@ public class VRFly : MonoBehaviour
         if (Mathf.Abs(transform.position.y - YellowRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - YellowRoomRoot.position.z) > 5) return;
 
+        if (!PowersManager.instance.YellowActive) return;
+
         if (!flyMode) EnterFlyMode();
     }
 

@@ -40,6 +40,8 @@ public class FrowerGrowBall : MonoBehaviour
         if (Mathf.Abs(transform.position.y - RedRoomRoot.position.y) > 20) return;
         if (Mathf.Abs(transform.position.z - RedRoomRoot.position.z) > 10) return;
 
+        if (!PowersManager.instance.RedActive) return;
+
         ContactPoint contact = collision.contacts[0];
 
         Vector3 position = contact.point;

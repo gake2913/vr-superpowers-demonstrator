@@ -22,6 +22,9 @@ public class ExtraInfoHover : MonoBehaviour
 
     public void Select()
     {
+
+        if (!PowersManager.instance.BlueActive) return;
+             
         Active = !Active;
 
         if (Active) StartCoroutine(CanvasFadeIn());

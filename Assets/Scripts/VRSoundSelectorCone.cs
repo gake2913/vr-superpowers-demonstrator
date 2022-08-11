@@ -32,6 +32,8 @@ public class VRSoundSelectorCone : MonoBehaviour
         if (Mathf.Abs(transform.position.y - TealRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - TealRoomRoot.position.z) > 5) return;
 
+        if (!PowersManager.instance.TealActive) return;
+
         bool buttonActive = TriggerAxis.action.ReadValue<float>() > 0.5f;
 
         if (buttonActive && !buttonPrev)

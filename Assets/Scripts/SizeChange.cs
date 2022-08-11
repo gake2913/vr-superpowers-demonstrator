@@ -28,6 +28,8 @@ public class SizeChange : MonoBehaviour
 
     public void ChangeSize(float height)
     {
+        if (!PowersManager.instance.RedActive) return;
+
         float scale = height / 1.8f;
 
         transform.localScale = new Vector3(scale, scale, scale);

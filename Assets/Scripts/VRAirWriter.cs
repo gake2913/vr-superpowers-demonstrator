@@ -35,6 +35,8 @@ public class VRAirWriter : MonoBehaviour
         if (Mathf.Abs(transform.position.y - RedRoomRoot.position.y) > 10) return;
         if (Mathf.Abs(transform.position.z - RedRoomRoot.position.z) > 10) return;
 
+        if (!PowersManager.instance.RedActive) return;
+
         float triggerValue = TriggerPress.action.ReadValue<float>();
         WritingActive = triggerValue > TriggerMin;
         float TriggerMod = (triggerValue - TriggerMin) / (TriggerMax - TriggerMin);

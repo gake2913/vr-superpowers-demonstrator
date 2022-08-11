@@ -35,6 +35,8 @@ public class Flower : MonoBehaviour
 
     public void AddStage()
     {
+        if (!PowersManager.instance.RedActive) return;
+
         Stage++;
         if (Stage > 3) Stage = 0;
     }
