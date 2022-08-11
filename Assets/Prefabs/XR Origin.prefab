@@ -1569,6 +1569,7 @@ GameObject:
   - component: {fileID: 6191474078393754571}
   - component: {fileID: 6191474078393754570}
   - component: {fileID: 75088091}
+  - component: {fileID: 5155836309509259362}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1805,6 +1806,21 @@ MonoBehaviour:
   TealRoomRoot: {fileID: 0}
   playerCam: {fileID: 6191474078393754565}
   SoundSourcePrefab: {fileID: 7931871471258751262, guid: c2283af8d812b2d4484747bc9f47a940, type: 3}
+--- !u!114 &5155836309509259362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6191474078393754566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cc2ba3636b379479559b1e7e5cd180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerAxis: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  SilhouetteMaterial: {fileID: 2100000, guid: 906e0e24d03de614db834387e2b74b1b, type: 2}
+  FadeTime: 1
 --- !u!1 &6191474078817592311
 GameObject:
   m_ObjectHideFlags: 0
