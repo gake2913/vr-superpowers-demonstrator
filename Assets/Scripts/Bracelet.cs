@@ -7,10 +7,12 @@ public class Bracelet : MonoBehaviour
 
     public bool PowerActive = false;
 
-    public Transform RoomRoot;
-    public Vector3 RoomLimits;
+    public Collider RoomCollider;
 
     public PowerColors Color;
+
+    public Transform DebugBall;
+    public Transform DebugBounds;
 
     private bool onSocket = false;
 
@@ -51,9 +53,24 @@ public class Bracelet : MonoBehaviour
 
     private bool InsideRoom()
     {
-        if (Mathf.Abs(transform.position.y - RoomRoot.position.y) > RoomLimits.y) return false;
-        if (Mathf.Abs(transform.position.x - RoomRoot.position.x) > RoomLimits.x) return false;
-        if (Mathf.Abs(transform.position.z - RoomRoot.position.z) > RoomLimits.z) return false;
-        return true;
+        Vector3 vecFromRoomCenter = transform.position - RoomCollider.transform.position;
+        Vector3 aaVecFromRoomCenter = Quaternion.Inverse(RoomCollider.transform.rotation) * vecFromRoomCenter;
+        Vector3 aaGlobalVector = aaVecFromRoomCenter + RoomCollider.transform.position;
+
+        if (DebugBall != null)
+            DebugBall.position = aaGlobalVector;
+
+        if (DebugBounds != null)
+        {
+            DebugBounds.position = RoomCollider.bounds.center;
+            DebugBounds.localScale = RoomCollider.bounds.size;
+        }
+
+        Vector3 closest = RoomCollider.ClosestPoint(transform.position);
+        return closest == transform.position;
+
+        if (RoomCollider.bounds.Contains(aaGlobalVector)) return true;
+
+        return false;
     }
 }

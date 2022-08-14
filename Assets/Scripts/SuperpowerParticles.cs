@@ -25,6 +25,7 @@ public class SuperpowerParticles : MonoBehaviour
     [Space()]
     public ParticleSystem ParticleSystem;
     public Material ParticleMaterial;
+    public Material ControllerGlowMaterial;
 
     private int currentRoom = -1;
     private int lastRoom = -1;
@@ -33,7 +34,8 @@ public class SuperpowerParticles : MonoBehaviour
     void Start()
     {
         ParticleSystem.Stop();
-        
+
+        ControllerGlowMaterial.SetFloat("_Alpha", 0);
     }
 
     // Update is called once per frame
@@ -52,19 +54,21 @@ public class SuperpowerParticles : MonoBehaviour
             var main = ParticleSystem.main;
             switch (currentRoom)
             {
-                case 0: main.startColor = ColorRed; ParticleMaterial.SetColor("_EmissionColor", ColorRed); break;
-                case 1: main.startColor = ColorYellow; ParticleMaterial.SetColor("_EmissionColor", ColorYellow); break;
-                case 2: main.startColor = ColorGreen; ParticleMaterial.SetColor("_EmissionColor", ColorGreen); break;
-                case 3: main.startColor = ColorBlue; ParticleMaterial.SetColor("_EmissionColor", ColorBlue); break;
-                case 4: main.startColor = ColorTeal; ParticleMaterial.SetColor("_EmissionColor", ColorTeal); break;
+                case 0: main.startColor = ColorRed; ParticleMaterial.SetColor("_EmissionColor", ColorRed); ControllerGlowMaterial.SetColor("_Color", ColorRed); break;
+                case 1: main.startColor = ColorYellow; ParticleMaterial.SetColor("_EmissionColor", ColorYellow); ControllerGlowMaterial.SetColor("_Color", ColorYellow); break;
+                case 2: main.startColor = ColorGreen; ParticleMaterial.SetColor("_EmissionColor", ColorGreen); ControllerGlowMaterial.SetColor("_Color", ColorGreen); break;
+                case 3: main.startColor = ColorBlue; ParticleMaterial.SetColor("_EmissionColor", ColorBlue); ControllerGlowMaterial.SetColor("_Color", ColorBlue); break;
+                case 4: main.startColor = ColorTeal; ParticleMaterial.SetColor("_EmissionColor", ColorTeal); ControllerGlowMaterial.SetColor("_Color", ColorTeal); break;
             }
 
-            ParticleSystem.Play();
+            //ParticleSystem.Play();
+            ControllerGlowMaterial.SetFloat("_Alpha", 1);
         }
 
         if (currentRoom == -1 && lastRoom != -1)
         {
-            ParticleSystem.Stop();
+            //ParticleSystem.Stop();
+            ControllerGlowMaterial.SetFloat("_Alpha", 0);
         }
 
         lastRoom = currentRoom;

@@ -1527,6 +1527,10 @@ PrefabInstance:
       propertyPath: RoomRoot
       value: 
       objectReference: {fileID: 1726926558}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: RoomCollider
+      value: 
+      objectReference: {fileID: 1726926559}
     - target: {fileID: 603799609, guid: b78969498db52144b95571bcd3756256, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -2364,6 +2368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 267919001}
+  - component: {fileID: 267919002}
   m_Layer: 0
   m_Name: Room Red Outer
   m_TagString: Untagged
@@ -2394,6 +2399,19 @@ Transform:
   m_Father: {fileID: 589035783}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &267919002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267919000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!4 &293017607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7070961705910022325, guid: 03bc72b8ef187a24f8c49a05c9aa2406, type: 3}
@@ -5515,6 +5533,10 @@ PrefabInstance:
       propertyPath: RoomRoot
       value: 
       objectReference: {fileID: 267919001}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: RoomCollider
+      value: 
+      objectReference: {fileID: 267919002}
     - target: {fileID: 603799609, guid: b78969498db52144b95571bcd3756256, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -7428,6 +7450,10 @@ PrefabInstance:
       propertyPath: YellowRoomRoot
       value: 
       objectReference: {fileID: 1155124069}
+    - target: {fileID: 4508062235132466099, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: RoomRed
       value: 
@@ -7496,6 +7522,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6227735800859103916, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: RoomRed
       value: 
@@ -7516,6 +7546,10 @@ PrefabInstance:
       propertyPath: RoomYellow
       value: 
       objectReference: {fileID: 1155124069}
+    - target: {fileID: 7802139855987538494, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
 --- !u!1 &914312991
@@ -8903,6 +8937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1155124069}
+  - component: {fileID: 1155124070}
   m_Layer: 0
   m_Name: Room Yellow (1)
   m_TagString: Untagged
@@ -8939,6 +8974,19 @@ Transform:
   m_Father: {fileID: 589035783}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!65 &1155124070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155124068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &1164717373
 GameObject:
   m_ObjectHideFlags: 0
@@ -9423,6 +9471,18 @@ PrefabInstance:
       propertyPath: RoomRoot
       value: 
       objectReference: {fileID: 1155124069}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: DebugBall
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: DebugBounds
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: RoomCollider
+      value: 
+      objectReference: {fileID: 1155124070}
     - target: {fileID: 603799609, guid: b78969498db52144b95571bcd3756256, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -9834,6 +9894,10 @@ PrefabInstance:
       propertyPath: RoomRoot
       value: 
       objectReference: {fileID: 1959466699}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: RoomCollider
+      value: 
+      objectReference: {fileID: 1959466700}
     - target: {fileID: 603799609, guid: b78969498db52144b95571bcd3756256, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -13736,6 +13800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1726926558}
+  - component: {fileID: 1726926559}
   m_Layer: 0
   m_Name: Room Teal (1)
   m_TagString: Untagged
@@ -13769,6 +13834,19 @@ Transform:
   m_Father: {fileID: 589035783}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1726926559
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726926557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &1734254817
 GameObject:
   m_ObjectHideFlags: 0
@@ -14268,6 +14346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820648761}
+  - component: {fileID: 1820648762}
   m_Layer: 0
   m_Name: Room Blue (1)
   m_TagString: Untagged
@@ -14301,6 +14380,19 @@ Transform:
   m_Father: {fileID: 589035783}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!65 &1820648762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820648760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &1827651185
 GameObject:
   m_ObjectHideFlags: 0
@@ -15289,6 +15381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959466699}
+  - component: {fileID: 1959466700}
   m_Layer: 0
   m_Name: Room Green (1)
   m_TagString: Untagged
@@ -15323,6 +15416,19 @@ Transform:
   m_Father: {fileID: 589035783}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+--- !u!65 &1959466700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959466698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &1963154725
 GameObject:
   m_ObjectHideFlags: 0
@@ -17783,6 +17889,10 @@ PrefabInstance:
       propertyPath: RoomRoot
       value: 
       objectReference: {fileID: 1820648761}
+    - target: {fileID: 603799607, guid: b78969498db52144b95571bcd3756256, type: 3}
+      propertyPath: RoomCollider
+      value: 
+      objectReference: {fileID: 1820648762}
     - target: {fileID: 603799609, guid: b78969498db52144b95571bcd3756256, type: 3}
       propertyPath: m_InteractionManager
       value: 
