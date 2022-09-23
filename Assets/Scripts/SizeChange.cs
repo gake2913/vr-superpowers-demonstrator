@@ -9,6 +9,7 @@ public class SizeChange : MonoBehaviour
     public LineRenderer LineRenderer;
     public ActionBasedContinuousMoveProvider Move;
     public AnimationCurve SizeToSpeedCurve;
+    public Transform Bracelet;
 
     private float lineWidth;
     private float speed;
@@ -28,11 +29,12 @@ public class SizeChange : MonoBehaviour
 
     public void ChangeSize(float height)
     {
-        if (!PowersManager.instance.RedActive) return;
+        if (!PowersManager.instance.YellowActive) return;
 
         float scale = height / 1.8f;
 
         transform.localScale = new Vector3(scale, scale, scale);
+        Bracelet.localScale = new Vector3(scale, scale, scale);
         LineRenderer.widthMultiplier = scale * lineWidth;
         Move.moveSpeed = SizeToSpeedCurve.Evaluate(height) * speed;
     }
