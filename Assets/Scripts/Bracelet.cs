@@ -71,6 +71,7 @@ public class Bracelet : MonoBehaviour
 
         if (RoomCollider.bounds.Contains(aaGlobalVector)) return true;
 
+
         return false;
     }
 }

@@ -54,6 +54,20 @@ public class PowersManager : MonoBehaviour
         }
     }
 
+    public bool GetPowerActive(PowerColors color)
+    {
+        switch (color)
+        {
+            case PowerColors.Red: return RedActive;
+            case PowerColors.Yellow: return YellowActive;
+            case PowerColors.Green: return GreenActive;
+            case PowerColors.Blue: return BlueActive;
+            case PowerColors.Teal: return TealActive;
+        }
+
+        return false;
+    }
+
 }
 
 public enum PowerColors
