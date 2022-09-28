@@ -4526,7 +4526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &361372829
 Transform:
   m_ObjectHideFlags: 0
@@ -10155,6 +10155,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 622144094}
     - target: {fileID: 357029279, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: FlyVision
+      value: 
+      objectReference: {fileID: 1626674527}
+    - target: {fileID: 357029279, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: FadeToBlack
       value: 
       objectReference: {fileID: 483220317}
@@ -10162,14 +10166,14 @@ PrefabInstance:
       propertyPath: YellowRoomRoot
       value: 
       objectReference: {fileID: 1155124069}
+    - target: {fileID: 1626674527, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1835887901, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: Bracelet
       value: 
       objectReference: {fileID: 1225553238}
-    - target: {fileID: 4508062235132466099, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6171847117408428209, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: RoomRed
       value: 
@@ -10238,14 +10242,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6191474078393754564, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: near clip plane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6227735800859103916, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7530614808362187034, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
       propertyPath: RoomRed
       value: 
@@ -10266,10 +10262,6 @@ PrefabInstance:
       propertyPath: RoomYellow
       value: 
       objectReference: {fileID: 1155124069}
-    - target: {fileID: 7802139855987538494, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
 --- !u!1 &914312991
@@ -17664,6 +17656,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8021035363255575350, guid: fb2c0314e4e993044aa29ff5ecd9956d, type: 3}
   m_PrefabInstance: {fileID: 1610304521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1626674527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1626674527, guid: e706aaf07abd6fd4da02b0c523b98cac, type: 3}
+  m_PrefabInstance: {fileID: 902580062}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1632581492
 GameObject:

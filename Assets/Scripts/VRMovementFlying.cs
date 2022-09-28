@@ -24,6 +24,8 @@ public class VRMovementFlying : MonoBehaviour
 
     public XROrigin XROrigin;
 
+    public GameObject FlyVision;
+
     public Animator FadeToBlack;
 
     public ActionBasedContinuousMoveProvider vrMovement;
@@ -74,6 +76,8 @@ public class VRMovementFlying : MonoBehaviour
 
         CharacterController.height = 0;
 
+        FlyVision.SetActive(true);
+
         selectorGrab.enabled = false;
         selectorDistance.enabled = false;
 
@@ -116,6 +120,8 @@ public class VRMovementFlying : MonoBehaviour
         vrMovement.enabled = true;
         characterControllerDriver.enabled = true;
         //CharacterController.useGravity = true;
+
+        FlyVision.SetActive(false);
 
         selectorDistance.enabled = true;
         selectorGrab.enabled = true;
