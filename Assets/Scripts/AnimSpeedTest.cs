@@ -52,7 +52,7 @@ public class AnimSpeedTest : MonoBehaviour
 
         Vector3 travelDirection = cart.position - lastPositions[cart];
         if (AnimationSpeed < 0) travelDirection *= -1;
-        Quaternion rot = travelDirection == Vector3.zero ? Quaternion.identity : Quaternion.LookRotation(travelDirection);
+        Quaternion rot = travelDirection == Vector3.zero ? Quaternion.identity : Quaternion.LookRotation(travelDirection, transform.up);
         cart.rotation = rot;
         lastPositions[cart] = cart.position;
     }
